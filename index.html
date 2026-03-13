@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +10,85 @@
 <style>
 
 body{
-font-family: 'Georgia', serif;
-background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+font-family:'Georgia',serif;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
 url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
-background-size: cover;
-background-position: center;
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+margin:0;
 color:white;
-text-align:center;
-padding:40px;
 }
 
+/* MAIN CARD */
+
 .card{
-background:rgba(0,0,0,0.65);
-padding:40px;
-border-radius:15px;
-max-width:800px;
-margin:auto;
+
+position:relative;
+max-width:850px;
+width:90%;
+border-radius:20px;
+overflow:hidden;
+
 border:3px solid gold;
-box-shadow:0px 0px 20px gold;
+box-shadow:0 0 30px gold;
+
+transform:perspective(1200px) rotateX(3deg);
+transition:0.4s;
+
+}
+
+/* CARD HOVER EFFECT */
+
+.card:hover{
+transform:perspective(1200px) rotateX(0deg) scale(1.02);
+box-shadow:0 0 60px gold;
+}
+
+/* COUPLE BACKGROUND IMAGE */
+
+.card::before{
+
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:url("/Users/mayurbari/Downloads/TejuAndAbhishekWedding/WhatsApp Image 2026-03-13 at 17.01.06.jpeg");
+background-size:cover;
+background-position:center;
+
+}
+
+/* LIGHT OVERLAY */
+
+.card::after{
+
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.55);
+
+}
+
+/* CONTENT */
+
+.content{
+
+position:relative;
+padding:40px;
+text-align:center;
+z-index:2;
+
 }
 
 h1{
@@ -43,7 +105,6 @@ margin-top:25px;
 .names{
 font-size:32px;
 font-weight:bold;
-color:white;
 margin:10px 0;
 }
 
@@ -63,6 +124,15 @@ font-style:italic;
 color:#f5deb3;
 }
 
+/* MOBILE */
+
+@media(max-width:600px){
+
+h1{font-size:28px}
+.names{font-size:22px}
+
+}
+
 </style>
 
 </head>
@@ -71,10 +141,14 @@ color:#f5deb3;
 
 <div class="card">
 
+<div class="content">
+
 <h1>✨ Wedding Invitation ✨</h1>
 
-<p>With the blessings of our parents,<br>
-we are delighted to invite you to celebrate the wedding of</p>
+<p>
+With the blessings of our parents,<br>
+we are delighted to invite you to celebrate the wedding of
+</p>
 
 <div class="names">Tejashwini Harsha</div>
 <p>D/o Mr. Vijay Tejpal Harsha & Mrs. Chitra Vijay Harsha</p>
@@ -85,47 +159,50 @@ we are delighted to invite you to celebrate the wedding of</p>
 <p>S/o Mr. Shankar Soma Jadhav & Mrs. Pushpa Shankar Jadhav</p>
 
 <div class="section">
+
 <h2>🌼 Pre-Wedding Ceremonies</h2>
 
-<p><b>Mehendi Ceremony</b><br>
-📅 06 May 2026 | ⏰ 04:00 PM</p>
+<p>
+<b>Mehendi Ceremony</b><br>
+📅 06 May 2026 | ⏰ 04:00 PM
+</p>
 
-<p><b>Chuda Ceremony</b><br>
-📅 07 May 2026 | ⏰ 01:00 PM</p>
+<p>
+<b>Chuda Ceremony</b><br>
+📅 07 May 2026 | ⏰ 01:00 PM
+</p>
 
 <p class="venue">
 📍 Venue<br>
-B-104, Panchali Building,<br>
-Near NL Complex Garden,<br>
-Anand Nagar, Dahisar East,<br>
+B-104 Panchali Building<br>
+Near NL Complex Garden<br>
+Anand Nagar, Dahisar East<br>
 Mumbai – 400068
 </p>
+
 </div>
 
 <div class="section">
+
 <h2>💍 Wedding Celebrations</h2>
 
-<p><b>Ring Ceremony</b><br>
-📅 08 May 2026 | ⏰ 12:30 PM</p>
+<p><b>Ring Ceremony</b><br>📅 08 May 2026 | ⏰ 12:30 PM</p>
 
-<p><b>Haldi Ceremony</b><br>
-📅 08 May 2026 | ⏰ 05:30 PM</p>
+<p><b>Haldi Ceremony</b><br>📅 08 May 2026 | ⏰ 05:30 PM</p>
 
-<p><b>Bollywood Beats Night (Sangeet)</b><br>
-📅 09 May 2026 | ⏰ 08:30 PM</p>
+<p><b>Bollywood Beats Night</b><br>📅 09 May 2026 | ⏰ 08:30 PM</p>
 
-<p><b>Wedding Ceremony</b><br>
-📅 10 May 2026 | ⏰ 12:30 PM</p>
+<p><b>Wedding Ceremony</b><br>📅 10 May 2026 | ⏰ 12:30 PM</p>
 
-<p><b>Grand Wedding Celebration</b><br>
-📅 10 May 2026 | ⏰ 07:00 PM</p>
+<p><b>Grand Wedding Celebration</b><br>📅 10 May 2026 | ⏰ 07:00 PM</p>
 
 <p class="venue">
 📍 Venue<br>
 Oceanview Beach House & Cafe<br>
-On the Beach, Navapur,<br>
-Virar West, Maharashtra – 401301
+Navapur Beach, Virar West<br>
+Maharashtra – 401301
 </p>
+
 </div>
 
 <div class="footer">
@@ -134,5 +211,8 @@ Virar West, Maharashtra – 401301
 
 </div>
 
+</div>
+
 </body>
+
 </html>
