@@ -149,6 +149,11 @@ h1{font-size:26px}
 
 <body>
 
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+<source src="music/Goldie_Sohel_-_Aaj_Sajeya_(mp3.pm).mp3" type="audio/mpeg">
+</audio>
+
 <button id="prevBtn" class="navBtn">◀</button>
 <button id="nextBtn" class="navBtn">▶</button>
 
@@ -236,12 +241,6 @@ Near NL Complex Garden<br>
 Anand Nagar, Dahisar East<br>
 Mumbai – 400068
 
-<br><br>
-
-<a href="https://www.google.com/maps/search/?api=1&query=Panchali+Building+Near+NL+Complex+Garden+Anand+Nagar+Dahisar+East+Mumbai+400068" target="_blank">
-📍 View on Google Maps
-</a>
-
 </p>
 
 </div>
@@ -260,22 +259,6 @@ style="background-image:url('images/RingCeremony.webp');">
 <p>📅 08 May 2026</p>
 <p>⏰ 12:30 PM</p>
 
-📍 Venue<br>
-
-Oceanview Beach House & Cafe<br>
-Navapur Beach, Virar West<br>
-Maharashtra – 401301
-
-<br><br>
-
-<a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
-
-View on Google Maps
-
-</a>
-
-</p>
-
 </div>
 
 </section>
@@ -292,22 +275,6 @@ style="background-image:url('images/Haldi.jpg');">
 <p>📅 08 May 2026</p>
 <p>⏰ 05:30 PM</p>
 
-
-📍 Venue<br>
-
-Oceanview Beach House & Cafe<br>
-Navapur Beach, Virar West<br>
-Maharashtra – 401301
-
-<br><br>
-
-<a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
-
-View on Google Maps
-
-</a>
-
-</p>
 </div>
 
 </section>
@@ -323,25 +290,6 @@ style="background-image:url('https://images.unsplash.com/photo-1514525253161-7a4
 
 <p>📅 09 May 2026</p>
 <p>⏰ 08:30 PM</p>
-
-
-📍 Venue<br>
-
-Oceanview Beach House & Cafe<br>
-Navapur Beach, Virar West<br>
-Maharashtra – 401301
-
-<br><br>
-
-<a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
-
-View on Google Maps
-
-</a>
-
-</p>
-
-
 
 </div>
 
@@ -359,23 +307,6 @@ style="background-image:url('images/WeddingImage.avif');">
 <p>📅 10 May 2026</p>
 <p>⏰ 12:30 PM</p>
 
-📍 Venue<br>
-
-Oceanview Beach House & Cafe<br>
-Navapur Beach, Virar West<br>
-Maharashtra – 401301
-
-<br><br>
-
-<a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
-
-View on Google Maps
-
-</a>
-
-</p>
-
-
 </div>
 
 </section>
@@ -391,23 +322,6 @@ style="background-image:url('images/GrandWedding.webp');">
 
 <p>📅 10 May 2026</p>
 <p>⏰ 07:00 PM</p>
-
-📍 Venue<br>
-
-Oceanview Beach House & Cafe<br>
-Navapur Beach, Virar West<br>
-Maharashtra – 401301
-
-<br><br>
-
-<a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
-
-View on Google Maps
-
-</a>
-
-</p>
-
 
 </div>
 
@@ -455,6 +369,19 @@ slider.scrollBy({left:window.innerWidth,behavior:"smooth"});
 prev.onclick=()=>{
 slider.scrollBy({left:-window.innerWidth,behavior:"smooth"});
 }
+
+/* Music autoplay after user interaction */
+
+const music=document.getElementById("bgMusic");
+
+function startMusic(){
+music.play();
+document.removeEventListener("click",startMusic);
+document.removeEventListener("touchstart",startMusic);
+}
+
+document.addEventListener("click",startMusic);
+document.addEventListener("touchstart",startMusic);
 
 </script>
 
