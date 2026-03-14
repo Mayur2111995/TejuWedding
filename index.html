@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +28,7 @@ overflow-x:hidden;
 
 .slider{
 display:flex;
-height:100dvh;
+min-height:100svh;
 overflow-x:auto;
 scroll-snap-type:x mandatory;
 scroll-behavior:smooth;
@@ -37,7 +39,7 @@ scroll-behavior:smooth;
 .page{
 
 flex:0 0 100%;
-height:100dvh;
+min-height:100svh;
 
 display:flex;
 justify-content:center;
@@ -149,19 +151,6 @@ h1{font-size:26px}
 
 }
 
-/* BACKGROUND IMAGES */
-
-.invite{background-image:url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1920");}
-.bride{background-image:url("images/bride.jpg");}
-.groom{background-image:url("images/groom.jpg");}
-.mehendi{background-image:url("images/mehendi.jpg");}
-.ring{background-image:url("images/ring.jpg");}
-.haldi{background-image:url("images/haldi.jpg");}
-.sangeet{background-image:url("images/sangeet.jpg");}
-.wedding{background-image:url("images/wedding.jpg");}
-.grand{background-image:url("images/grand.jpg");}
-.thanks{background-image:url("images/thanks.jpg");}
-
 </style>
 
 </head>
@@ -175,7 +164,8 @@ h1{font-size:26px}
 
 <!-- INVITATION -->
 
-<section class="page invite">
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1920');">
 
 <div class="card">
 
@@ -197,7 +187,9 @@ Swipe ➜ or use arrows to see full invitation
 
 <!-- BRIDE -->
 
-<section class="page bride">
+<section class="page"
+style="background-image:url('/Users/mayurbari/Downloads/TejuAndAbhishekWedding/WhatsApp Image 2026-03-13 at 18.29.38.jpeg');">
+<!-- style="background-image:url('https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=1920');" -->
 
 <div class="card">
 
@@ -216,7 +208,8 @@ D/o Mr. Vijay Tejpal Harsha<br>
 
 <!-- GROOM -->
 
-<section class="page groom">
+<section class="page"
+style="background-image:url('/Users/mayurbari/Downloads/TejuAndAbhishekWedding/Abhishek.jpeg');">
 
 <div class="card">
 
@@ -235,7 +228,8 @@ S/o Mr. Shankar Soma Jadhav<br>
 
 <!-- MEHENDI -->
 
-<section class="page mehendi">
+<section class="page"
+style="background-image:url('/Users/mayurbari/Downloads/TejuAndAbhishekWedding/Henna-for-all-5.jpg');">
 
 <div class="card">
 
@@ -245,19 +239,28 @@ S/o Mr. Shankar Soma Jadhav<br>
 <p>⏰ 04:00 PM</p>
 
 <p class="venue">
-📍 Panchali Building<br>
+
+📍 B-104 Panchali Building<br>
 Near NL Complex Garden<br>
 Anand Nagar, Dahisar East<br>
 Mumbai – 400068
+
+<br><br>
+
+<a href="https://www.google.com/maps/search/?api=1&query=Panchali+Building+Near+NL+Complex+Garden+Anand+Nagar+Dahisar+East+Mumbai+400068" target="_blank">
+📍 View on Google Maps
+</a>
+
 </p>
 
 </div>
 
 </section>
 
-<!-- RING -->
+<!-- RING CEREMONY -->
 
-<section class="page ring">
+<section class="page"
+style="background-image:url('/Users/mayurbari/Downloads/TejuAndAbhishekWedding/RingCeremony.webp');">
 
 <div class="card">
 
@@ -266,13 +269,27 @@ Mumbai – 400068
 <p>📅 08 May 2026</p>
 <p>⏰ 12:30 PM</p>
 
+<p class="venue">
+
+📍 Oceanview Beach House & Cafe<br>
+Navapur Beach, Virar West<br>
+Maharashtra – 401301
+<br><br>
+
+<a href="https://maps.google.com/?q=Oceanview+Beach+House+Cafe+Navapur+Beach+Virar+West+401301" target="_blank">
+View on Google Maps
+</a> 
+
+</p>
+
 </div>
 
 </section>
 
 <!-- HALDI -->
 
-<section class="page haldi">
+<section class="page"
+style="background-image:url('/Users/mayurbari/Downloads/TejuAndAbhishekWedding/Haldi.jpg');">
 
 <div class="card">
 
@@ -281,13 +298,27 @@ Mumbai – 400068
 <p>📅 08 May 2026</p>
 <p>⏰ 05:30 PM</p>
 
+<p class="venue">
+
+📍 Oceanview Beach House & Cafe<br>
+Navapur Beach, Virar West<br>
+Maharashtra – 401301
+<br><br>
+
+<a href="https://maps.google.com/?q=Oceanview+Beach+House+Cafe+Navapur+Beach+Virar+West+401301" target="_blank">
+View on Google Maps
+</a> 
+
+</p>
+
 </div>
 
 </section>
 
 <!-- SANGEET -->
 
-<section class="page sangeet">
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1920');">
 
 <div class="card">
 
@@ -296,13 +327,28 @@ Mumbai – 400068
 <p>📅 09 May 2026</p>
 <p>⏰ 08:30 PM</p>
 
+<p class="venue">
+
+📍 Oceanview Beach House & Cafe<br>
+Navapur Beach, Virar West<br>
+Maharashtra – 401301
+
+<br><br>
+
+<a href="https://maps.google.com/?q=Oceanview+Beach+House+Cafe+Navapur+Beach+Virar+West+401301" target="_blank">
+View on Google Maps
+</a> 
+
+</p>
+
 </div>
 
 </section>
 
 <!-- WEDDING -->
 
-<section class="page wedding">
+<section class="page"
+style="background-image:url('/Users/mayurbari/Downloads/TejuAndAbhishekWedding/WeddingImage.avif');">
 
 <div class="card">
 
@@ -311,13 +357,28 @@ Mumbai – 400068
 <p>📅 10 May 2026</p>
 <p>⏰ 12:30 PM</p>
 
+<p class="venue">
+
+📍 Oceanview Beach House & Cafe<br>
+Navapur Beach, Virar West<br>
+Maharashtra – 401301
+
+<br><br>
+
+<a href="https://maps.google.com/?q=Oceanview+Beach+House+Cafe+Navapur+Beach+Virar+West+401301" target="_blank">
+View on Google Maps
+</a> 
+
+</p>
+
 </div>
 
 </section>
 
-<!-- GRAND -->
+<!-- GRAND CELEBRATION -->
 
-<section class="page grand">
+<section class="page"
+style="background-image:url('/Users/mayurbari/Downloads/TejuAndAbhishekWedding/GrandWedding.webp');">
 
 <div class="card">
 
@@ -326,26 +387,45 @@ Mumbai – 400068
 <p>📅 10 May 2026</p>
 <p>⏰ 07:00 PM</p>
 
+<p class="venue">
+
+📍 Oceanview Beach House & Cafe<br>
+Navapur Beach, Virar West<br>
+Maharashtra – 401301
+
+<br><br>
+
+<a href="https://maps.google.com/?q=Oceanview+Beach+House+Cafe+Navapur+Beach+Virar+West+401301" target="_blank">
+View on Google Maps
+</a> 
+
+</p>
+
 </div>
 
 </section>
 
 <!-- THANK YOU -->
 
-<section class="page thanks">
+<section class="page"
+style="background-image:url('/Users/mayurbari/Downloads/TejuAndAbhishekWedding/WhatsApp Image 2026-03-13 at 19.27.23.jpeg');">
 
 <div class="card">
 
 <h1>🙏 Thank You 🙏</h1>
 
 <p style="font-size:20px;margin-top:15px">
+
 Thank you for being part of our special day.<br>
 Your presence and blessings mean the world to us.
+
 </p>
 
 <div class="footer">
+
 ✨ With Love ✨<br><br>
 Tejaswini & Abhishek
+
 </div>
 
 </div>
