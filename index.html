@@ -150,7 +150,7 @@ h1{font-size:26px}
 <body>
 
 <!-- Background Music -->
-<audio id="bgMusic" loop>
+<audio id="bgMusic" loop preload="auto">
 <source src="music/aajsajeya.mp3" type="audio/mpeg">
 </audio>
 
@@ -271,10 +271,7 @@ Maharashtra – 401301
 
 <a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
 View on Google Maps
-
 </a>
-
-</p>
 
 </div>
 
@@ -292,17 +289,15 @@ style="background-image:url('images/Haldi.jpg');">
 <p> 08 May 2026</p>
 <p> 05:30 PM</p>
 
-
 📍 Venue<br>
 Oceanview Beach House & Cafe<br>
 Navapur Beach, Virar West<br>
 Maharashtra – 401301
 <br><br>
+
 <a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
 View on Google Maps
 </a>
-
-</p>
 
 </div>
 
@@ -325,12 +320,10 @@ Oceanview Beach House & Cafe<br>
 Navapur Beach, Virar West<br>
 Maharashtra – 401301
 <br><br>
+
 <a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
 View on Google Maps
-
 </a>
-
-</p>
 
 </div>
 
@@ -353,11 +346,10 @@ Oceanview Beach House & Cafe<br>
 Navapur Beach, Virar West<br>
 Maharashtra – 401301
 <br><br>
+
 <a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
 View on Google Maps
 </a>
-
-</p>
 
 </div>
 
@@ -380,11 +372,10 @@ Oceanview Beach House & Cafe<br>
 Navapur Beach, Virar West<br>
 Maharashtra – 401301
 <br><br>
+
 <a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+%26+Cafe+Navapur+Beach+Virar+West+Maharashtra+401301" target="_blank">
 View on Google Maps
 </a>
-
-</p>
 
 </div>
 
@@ -400,17 +391,13 @@ style="background-image:url('images/couple.jpeg');">
 <h1>🙏 Thank You 🙏</h1>
 
 <p style="font-size:20px;margin-top:15px">
-
 Save the date and celebrate with us<br>
 We request the honor of your gracious presence and blessings.❤️
-
 </p>
 
 <div class="footer">
-
 ✨ With Love ✨<br><br>
 Tejaswini & Abhishek
-
 </div>
 
 </div>
@@ -433,18 +420,25 @@ prev.onclick=()=>{
 slider.scrollBy({left:-window.innerWidth,behavior:"smooth"});
 }
 
-/* Music autoplay after user interaction */
+/* Android + iPhone music start */
 
 const music=document.getElementById("bgMusic");
+let started=false;
 
 function startMusic(){
-music.play();
-document.removeEventListener("click",startMusic);
-document.removeEventListener("touchstart",startMusic);
+
+if(started) return;
+
+music.play().then(()=>{
+started=true;
+}).catch(()=>{});
+
 }
 
 document.addEventListener("click",startMusic);
 document.addEventListener("touchstart",startMusic);
+document.addEventListener("touchend",startMusic);
+document.addEventListener("scroll",startMusic);
 
 </script>
 
