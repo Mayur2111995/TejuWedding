@@ -1,7 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,155 +11,134 @@
 
 <style>
 
-
 *{
 box-sizing:border-box;
+margin:0;
+padding:0;
 }
+
 body{
 font-family:'Georgia',serif;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
-url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
-background-size:cover;
-background-position:center;
+color:white;
+overflow:hidden;
+}
+
+/* SLIDER */
+
+.slider{
+display:flex;
+height:100vh;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+}
+
+/* PAGE */
+
+.page{
+
+flex:0 0 100%;
+height:100vh;
+
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
-margin:0;
-color:white;
-padding:20px;
+
+scroll-snap-align:start;
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+padding:30px;
 }
 
-/* MAIN CARD */
+/* CARD */
 
 .card{
 
-position:relative;
-max-width:850px;
-width:100%;
-max-width:850px;
-border-radius:20px;
-overflow:hidden;
+max-width:750px;
+width:95%;
+
+padding:40px;
+
+background:rgba(0,0,0,0.65);
 
 border:3px solid gold;
+border-radius:20px;
+
+text-align:center;
+
 box-shadow:0 0 30px gold;
 
-transform:perspective(1200px) rotateX(3deg);
-transition:0.4s;
-
 }
 
-/* CARD HOVER EFFECT */
-
-.card:hover{
-transform:perspective(1200px) rotateX(0deg) scale(1.02);
-box-shadow:0 0 60px gold;
-}
-
-/* COUPLE BACKGROUND IMAGE */
-
-.card::before{
-
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-
-background:url("WhatsApp Image 2026-03-13 at 19.27.23.jpeg");
-background-size:cover;
-background-position:center;
-
-}
-
-/* LIGHT OVERLAY */
-
-.card::after{
-
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-
-background:rgba(0,0,0,0.55);
-
-}
-
-/* CONTENT */
-
-.content{
-
-position:relative;
-padding:40px;
-text-align:center;
-z-index:2;
-
-}
+/* TEXT */
 
 h1{
 color:gold;
 font-size:40px;
-margin-bottom:10px;
-}
-
-h2{
-color:#ffd700;
-margin-top:25px;
+margin-bottom:15px;
 }
 
 .names{
-font-size:32px;
+font-size:28px;
+color:#ffd700;
 font-weight:bold;
 margin:10px 0;
 }
 
-.section{
-margin-top:30px;
-}
-
 .venue{
-color:#ffd700;
-font-size:18px;
 margin-top:10px;
+color:#ffd700;
 }
 
 .footer{
-margin-top:30px;
+margin-top:20px;
 font-style:italic;
 color:#f5deb3;
 }
+
+a{
+color:#ffd700;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* NAVIGATION BUTTONS */
+
+.navBtn{
+
+position:fixed;
+top:50%;
+transform:translateY(-50%);
+
+background:gold;
+color:black;
+
+border:none;
+
+padding:14px 18px;
+
+font-size:22px;
+
+cursor:pointer;
+
+border-radius:50%;
+
+z-index:10;
+
+}
+
+#prevBtn{left:15px;}
+#nextBtn{right:15px;}
 
 /* MOBILE */
 
 @media(max-width:600px){
 
-.content{
-padding:25px;
-}
-
-h1{
-font-size:28px;
-}
-
-.names{
-font-size:22px;
-}
-
-h2{
-font-size:20px;
-}
-
-p{
-font-size:15px;
-line-height:1.5;
-}
-
-.venue{
-font-size:15px;
-}
+h1{font-size:26px}
+.names{font-size:22px}
 
 }
 
@@ -167,80 +148,230 @@ font-size:15px;
 
 <body>
 
-<div class="card">
+<button id="prevBtn" class="navBtn">◀</button>
+<button id="nextBtn" class="navBtn">▶</button>
 
-<div class="content">
+<div class="slider" id="slider">
+
+<!-- PAGE 1 INVITATION -->
+
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=1920');">
+
+<div class="card">
 
 <h1>✨ Wedding Invitation ✨</h1>
 
 <p>
 With the blessings of our parents,<br>
-we are delighted to invite you to celebrate the wedding of
+we cordially invite you to join the<br>
+wedding celebration.
 </p>
 
-<div class="names">Tejashwini Harsha</div>
-<p>D/o Mr. Vijay Tejpal Harsha & Mrs. Chitra Vijay Harsha</p>
+<p class="footer">
+Swipe ➜ or use arrows to see full invitation
+</p>
 
-<h2>Weds</h2>
+</div>
+
+</section>
+
+
+<!-- BRIDE -->
+
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1529636798458-92182e662485?q=80&w=1920');">
+
+<div class="card">
+
+<h1>Bride</h1>
+
+<div class="names">Tejaswini Harsha</div>
+
+<p>
+D/o Mr. Vijay Tejpal Harsha<br>
+& Mrs. Chitra Vijay Harsha
+</p>
+
+</div>
+
+</section>
+
+
+<!-- GROOM -->
+
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1920');">
+
+<div class="card">
+
+<h1>Groom</h1>
 
 <div class="names">Abhishek Jadhav</div>
-<p>S/o Mr. Shankar Soma Jadhav & Mrs. Pushpa Shankar Jadhav</p>
-
-<div class="section">
-
-<h2>🌼 Pre-Wedding Ceremonies</h2>
 
 <p>
-<b>Mehendi Ceremony</b><br>
-📅 06 May 2026 | ⏰ 04:00 PM
+S/o Mr. Shankar Soma Jadhav<br>
+& Mrs. Pushpa Shankar Jadhav
 </p>
 
-<p>
-<b>Chuda Ceremony</b><br>
-📅 07 May 2026 | ⏰ 01:00 PM
-</p>
+</div>
+
+</section>
+
+
+<!-- MEHENDI -->
+
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=1920');">
+
+<div class="card">
+
+<h1>🌼 Mehendi Ceremony</h1>
+
+<p>📅 06 May 2026</p>
+<p>⏰ 04:00 PM</p>
 
 <p class="venue">
-📍 Venue<br>
-B-104 Panchali Building<br>
+
+📍 B-104 Panchali Building<br>
 Near NL Complex Garden<br>
 Anand Nagar, Dahisar East<br>
 Mumbai – 400068
+
+<br><br>
+
+<a href="https://www.google.com/maps/search/?api=1&query=B-104+Panchali+Building+Dahisar+East+Mumbai+400068" target="_blank">
+View on Google Maps
+</a>
+
 </p>
 
 </div>
 
-<div class="section">
+</section>
 
-<h2>💍 Wedding Celebrations</h2>
 
-<p><b>Ring Ceremony</b><br>📅 08 May 2026 | ⏰ 12:30 PM</p>
+<!-- RING CEREMONY -->
 
-<p><b>Haldi Ceremony</b><br>📅 08 May 2026 | ⏰ 05:30 PM</p>
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1920');">
 
-<p><b>Bollywood Beats Night</b><br>📅 09 May 2026 | ⏰ 08:30 PM</p>
+<div class="card">
 
-<p><b>Wedding Ceremony</b><br>📅 10 May 2026 | ⏰ 12:30 PM</p>
+<h1>💎 Ring Ceremony</h1>
 
-<p><b>Grand Wedding Celebration</b><br>📅 10 May 2026 | ⏰ 07:00 PM</p>
+<p>📅 08 May 2026</p>
+<p>⏰ 12:30 PM</p>
+
+</div>
+
+</section>
+
+
+<!-- HALDI -->
+
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=1920');">
+
+<div class="card">
+
+<h1>💛 Haldi Ceremony</h1>
+
+<p>📅 08 May 2026</p>
+<p>⏰ 05:30 PM</p>
+
+</div>
+
+</section>
+
+
+<!-- SANGEET -->
+
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1920');">
+
+<div class="card">
+
+<h1>🎵 Bollywood Beats Night</h1>
+
+<p>📅 09 May 2026</p>
+<p>⏰ 08:30 PM</p>
+
+</div>
+
+</section>
+
+
+<!-- WEDDING -->
+
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=1920');">
+
+<div class="card">
+
+<h1>💒 Wedding Ceremony</h1>
+
+<p>📅 10 May 2026</p>
+<p>⏰ 12:30 PM</p>
+
+</div>
+
+</section>
+
+
+<!-- RECEPTION -->
+
+<section class="page"
+style="background-image:url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1920');">
+
+<div class="card">
+
+<h1>🎉 Grand Wedding Celebration</h1>
+
+<p>📅 10 May 2026</p>
+<p>⏰ 07:00 PM</p>
 
 <p class="venue">
-📍 Venue<br>
-Oceanview Beach House & Cafe<br>
+
+📍 Oceanview Beach House & Cafe<br>
 Navapur Beach, Virar West<br>
 Maharashtra – 401301
+
+<br><br>
+
+<a href="https://www.google.com/maps/search/?api=1&query=Oceanview+Beach+House+Cafe+Navapur+Virar+West" target="_blank">
+View on Google Maps
+</a>
+
 </p>
 
-</div>
-
 <div class="footer">
-💐 Your presence will make our celebration more joyful and memorable 💐
+💐 Your presence will make our celebration joyful and memorable 💐
 </div>
 
 </div>
 
+</section>
+
 </div>
+
+
+<script>
+
+const slider = document.getElementById("slider");
+const next = document.getElementById("nextBtn");
+const prev = document.getElementById("prevBtn");
+
+next.onclick = () =>{
+slider.scrollBy({left:window.innerWidth,behavior:"smooth"});
+}
+
+prev.onclick = () =>{
+slider.scrollBy({left:-window.innerWidth,behavior:"smooth"});
+}
+
+</script>
 
 </body>
-
 </html>
+```
